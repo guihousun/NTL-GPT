@@ -1,6 +1,5 @@
 import h5py
 from langchain.chat_models import init_chat_model
-from NTL_Knowledge_Base_Searcher import NTL_Knowledge_Base
 from NTL_Composite import NTL_composite_local_tool, NTL_composite_GEE_tool
 from NTL_preprocess import SDGSAT1_strip_removal_tool, SDGSAT1_radiometric_calibration_tool, VNP46A2_angular_correction_tool, noaa20_sdr_preprocess_tool, dmsp_preprocess_tool
 from NTL_classification import classify_light_types_from_rrli_rbli
@@ -15,7 +14,7 @@ from langchain_core.messages import SystemMessage
 
 
 tools = [
-    NTL_Knowledge_Base, SDGSAT1_strip_removal_tool, urban_extraction_tool, NTL_trend_analysis_tool,
+    SDGSAT1_strip_removal_tool, urban_extraction_tool, NTL_trend_analysis_tool,
     noaa20_sdr_preprocess_tool, SDGSAT1_radiometric_calibration_tool, classify_light_types_from_rrli_rbli, NTL_raster_statistics,
     VNP46A2_angular_correction_tool, SDGSAT1_index_tool, bvntl_index_tool, vnci_index_tool, dmsp_preprocess_tool,
     otsu_road_extraction_tool, NTL_composite_local_tool, NTL_composite_GEE_tool, simple_ntl_anomaly_detection_tool]
