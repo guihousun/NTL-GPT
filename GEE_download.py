@@ -1,10 +1,53 @@
-from langchain.tools import StructuredTool
-from pydantic import BaseModel, Field
+# GEE_download.py
+import os
+import json
+import tempfile
 import ee
 
-ee.Authenticate()
-project_id = 'empyrean-caster-430308-m2'
-ee.Initialize(project=project_id)
+_PROJECT_ID = 'empyrean-caster-430308-m2'
+_EE_READY = False
+
+def _init_ee_if_needed():
+    """Lazy init: 优先服务账号，其次本地交互式认证；只初始化一次。"""
+    global _EE_READY
+    if _EE_READY:
+        return
+    try:
+        # 尝试直接使用已有持久凭证（本地开发时可能有效）
+        ee.Initialize(project=_PROJECT_ID)
+        _EE_READY = True
+        return
+    except Exception:
+        pass
+
+    # 1) 服务账号路径：用于云端/Streamlit 等非交互环境（推荐）
+    sa_email = (
+        os.getenv("EE_SERVICE_ACCOUNT") or
+        getattr(__import__("builtins"), "st", None) and __import__("builtins").st.secrets.get("EE_SERVICE_ACCOUNT")
+    )
+    sa_key_json = (
+        os.getenv("EE_PRIVATE_KEY_JSON") or
+        getattr(__import__("builtins"), "st", None) and __import__("builtins").st.secrets.get("EE_PRIVATE_KEY_JSON")
+    )
+
+    if sa_email and sa_key_json:
+        # 将 JSON 写入临时文件（ee 旧版只接受文件路径最稳妥）
+        with tempfile.NamedTemporaryFile(delete=False, suffix=".json") as f:
+            if isinstance(sa_key_json, dict):
+                f.write(json.dumps(sa_key_json).encode("utf-8"))
+            else:
+                f.write(sa_key_json.encode("utf-8"))
+            key_path = f.name
+        creds = ee.ServiceAccountCredentials(sa_email, key_path)
+        ee.Initialize(credentials=creds, project=_PROJECT_ID)
+        _EE_READY = True
+        return
+
+    # 2) 本地开发（可交互）：退回到 OAuth
+    # 注意：云端/容器里这一步会卡/失败，所以只在本地使用
+    ee.Authenticate()           # 需要在本地浏览器完成一次授权
+    ee.Initialize(project=_PROJECT_ID)
+    _EE_READY = True
 
 from typing import Optional, Literal
 from pydantic import BaseModel, Field
