@@ -20,7 +20,7 @@ rasterio
 geemap
 earthengine-api
 osmnx
-gdal
+GDAL==3.6.4
 
 # LangChain & Agent 框架
 langchain
