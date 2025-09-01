@@ -1,6 +1,5 @@
 import h5py
 from langchain.chat_models import init_chat_model
-from NTL_Data_Searcher import data_searcher_tools
 from NTL_Knowledge_Base_Searcher import NTL_Knowledge_Base
 from NTL_Composite import NTL_composite_local_tool, NTL_composite_GEE_tool
 from NTL_preprocess import SDGSAT1_strip_removal_tool, SDGSAT1_radiometric_calibration_tool, VNP46A2_angular_correction_tool, noaa20_sdr_preprocess_tool, dmsp_preprocess_tool
@@ -12,9 +11,6 @@ from NTL_raster_stats import NTL_raster_statistics
 from NTL_trend_detection_tool import NTL_trend_analysis_tool
 from main_road import otsu_road_extraction_tool
 from NTL_anomaly_detection_tool import simple_ntl_anomaly_detection_tool
-import getpass
-import ee
-import os
 from langchain_core.messages import SystemMessage
 
 
