@@ -315,7 +315,6 @@ with st.sidebar:
 
 def build_conversation():
     from NTL_Code_Assistant import Code_Assistant_system_prompt_text, Code_tools
-    from NTL_Data_Searcher import system_prompt_data_searcher, data_searcher_tools
     """用侧栏选择的模型构建/重建对话Agent"""
     llm = init_chat_model(
         f"openai:{st.session_state['cfg_model']}",
@@ -325,14 +324,10 @@ def build_conversation():
     memory1 = MemorySaver()
     Code_Assistant = create_react_agent(llm, tools=Code_tools, prompt=Code_Assistant_system_prompt_text, checkpointer=memory1, name="Code_Assistant",)
 
-    memory2 = MemorySaver()
-    Data_Searcher = create_react_agent(llm, tools=data_searcher_tools, prompt = system_prompt_data_searcher, name="Data_Searcher",checkpointer=memory2)
-
-
     # 这里用你现有的 system_prompt_text 与 tools
     graph = create_supervisor(
         model=llm,
-        agents=[Data_Searcher, Code_Assistant],
+        agents=[Code_Assistant],
         prompt=system_prompt_text,
         add_handoff_back_messages=True,
         output_mode="full_history",
