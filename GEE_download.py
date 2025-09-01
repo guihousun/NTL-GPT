@@ -2,7 +2,7 @@ from langchain.tools import StructuredTool
 from pydantic import BaseModel, Field
 import ee
 
-# ee.Authenticate()
+ee.Authenticate()
 project_id = 'empyrean-caster-430308-m2'
 ee.Initialize(project=project_id)
 
