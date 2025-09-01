@@ -4,7 +4,6 @@ from langchain.agents import initialize_agent
 from langchain.chat_models import init_chat_model
 from langchain_core.messages import SystemMessage
 from langchain_core.tools import StructuredTool, create_retriever_tool
-from langchain_chroma import Chroma
 from langchain_openai import OpenAIEmbeddings
 from langgraph.prebuilt import create_react_agent
 from typing import Annotated, Literal, Sequence, Optional
@@ -22,15 +21,16 @@ from langgraph.graph.message import add_messages
 from langgraph.prebuilt import ToolNode, tools_condition
 from langgraph.checkpoint.memory import MemorySaver
 import os
+from langchain_community.vectorstores import FAISS
 
 # Initialize the embeddings
 embeddings = OpenAIEmbeddings()
 
 # 文献知识库
-literature_vector_store = Chroma(
-    collection_name="Literature_RAG",
-    persist_directory=r"C:\NTL-CHAT\NTL-GPT\RAG\Literature_RAG",
-    embedding_function=embeddings
+literature_vector_store = FAISS.load_local(
+    r"C:\NTL-CHAT\NTL-GPT\RAG_Faiss\Literature_RAG",
+    embeddings,
+    allow_dangerous_deserialization=True,  # 读取本地 pkl 所需
 )
 
 NTL_Literature_Knowledge = create_retriever_tool(
@@ -45,10 +45,10 @@ NTL_Literature_Knowledge = create_retriever_tool(
 )
 
 # 解决方案知识库（workflow、数据源、GEE使用、操作指南）
-solution_vector_store = Chroma(
-    collection_name="Solution_RAG",
-    persist_directory=r"C:\NTL-CHAT\NTL-GPT\RAG\Solution_RAG",
-    embedding_function=embeddings
+solution_vector_store = FAISS.load_local(
+    r"C:\NTL-CHAT\NTL-GPT\RAG_Faiss\Solution_RAG",
+    embeddings,
+    allow_dangerous_deserialization=True,  # 读取本地 pkl 所需
 )
 
 NTL_Solution_Knowledge = create_retriever_tool(
@@ -65,10 +65,10 @@ NTL_Solution_Knowledge = create_retriever_tool(
 )
 
 # 代码知识库（Python/GEE 代码片段和模块范例）
-code_vector_store = Chroma(
-    collection_name="Code_RAG",
-    persist_directory=r"C:\NTL-CHAT\NTL-GPT\RAG\Code_RAG",
-    embedding_function=embeddings
+code_vector_store = FAISS.load_local(
+    r"C:\NTL-CHAT\NTL-GPT\RAG_Faiss\Code_RAG",
+    embeddings,
+    allow_dangerous_deserialization=True,  # 读取本地 pkl 所需
 )
 
 NTL_Code_Knowledge = create_retriever_tool(
