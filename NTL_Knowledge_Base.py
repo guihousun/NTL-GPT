@@ -23,6 +23,11 @@ from langgraph.checkpoint.memory import MemorySaver
 import os
 from langchain_community.vectorstores import FAISS
 
+env_vars = {
+    "OPENAI_API_KEY": "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",
+}
+os.environ.update({k: os.environ.get(k) or v for k, v in env_vars.items()})
+
 # Initialize the embeddings
 embeddings = OpenAIEmbeddings()
 
