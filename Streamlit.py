@@ -612,7 +612,7 @@ def show_history():
 # 通过 Streamlit sidebar 允许用户上传文件，并对上传的文档进行处理，提取文本并存入向量存储。
 # 在主容器内，展示聊天输入框和聊天历史。用户输入问题后，如果会话存在，机器人就会根据上下文进行回答。
 # '''
-@st.cache_data
+# @st.cache_data
 
 def main():
     # 初始化会话状态
