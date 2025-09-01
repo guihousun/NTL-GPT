@@ -1,17 +1,28 @@
+# 基础科学计算
 pandas
 numpy
 tqdm
 requests
+h5py
+xarray
+dask
+scikit-image
+scikit-learn
+matplotlib
+opencv-python
+pymannkendall
+
+# GIS / 遥感处理
 geopandas
 shapely
 geopy
 rasterio
 geemap
 earthengine-api
-h5py
-opencv-python
-scikit-image
-matplotlib
+osmnx
+gdal
+
+# LangChain & Agent 框架
 langchain
 langgraph
 langchain-community
@@ -19,16 +30,16 @@ langchain-experimental
 langchain-anthropic
 langchain-openai
 langchain-chroma
+langchain_google_community
+langchain_tavily
+langgraph_supervisor
+
+# Web & UI
 streamlit
+js
+
+# 其它工具
 pydantic
 ipython
-xarray
-dask
 satpy
 pyresample
-langgraph_supervisor
-pymannkendall
-langchain_google_community
-osmnx
-js
-langchain_tavily
