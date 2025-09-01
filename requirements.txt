@@ -31,3 +31,4 @@ pymannkendall
 langchain_google_community
 osmnx
 js
+langchain_tavily
