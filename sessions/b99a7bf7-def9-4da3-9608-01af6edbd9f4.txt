@@ -1,0 +1,12 @@
+user: Assess the impact of the 2025 Myanmar earthquake on nighttime light levels using daily NPP-VIIRS VNP46A2 imagery. Retrieve authoritative event details from official sources (USGS, ReliefWeb, OCHA, WHO, GDACS) to identify the most severely affected provinces. Download pre- and post-event daily imagery for these provinces only (due to GEE download size limits), composite median values for each period, compute brightness change and percentage change per province, and summarize results in a CSV and plots for damage assessment.
+assistant: The authoritative event details for the 2025 Myanmar earthquake, including date, magnitude, coordinates, and affected provinces, could not be retrieved from official sources at this time.
+
+To proceed with the nighttime light impact assessment, please provide any known event details or confirm if I should perform the analysis for the entire Myanmar country or major provinces as a proxy.
+
+Once confirmed, I will:
+- Download daily NPP-VIIRS VNP46A2 imagery for the specified provinces or country for pre- and post-event periods.
+- Composite median images for each period.
+- Compute brightness change and percentage change.
+- Summarize results in CSV and generate plots for damage assessment.
+
+Please advise how to proceed.

@@ -1,0 +1,29 @@
+user: Assess the impact of the 2025 Myanmar earthquake on nighttime light levels using daily NPP-VIIRS VNP46A2 imagery. Retrieve authoritative event details from official sources (USGS, ReliefWeb, OCHA, WHO, GDACS) to identify the most severely affected provinces. Download pre- and post-event daily imagery for these provinces only (due to GEE download size limits), composite median values for each period, compute brightness change and percentage change per province, and summarize results in a CSV and plots for damage assessment.
+assistant: There is a temporary technical issue with retrieving the recommended workflow from the NTL Knowledge Base. However, based on established best practices in NTL disaster assessment, here is a modular plan for your task. Once the Knowledge Base is available, I will cross-check and update the workflow if needed.
+
+**Proposed Modular Workflow:**
+
+1. **Event Region & Date Identification**
+   - Retrieve authoritative earthquake event details (date, magnitude, epicenter, affected provinces) from USGS, ReliefWeb, OCHA, WHO, GDACS.
+   - Select the most severely affected provinces for analysis.
+
+2. **Pre- and Post-Event Period Definition**
+   - Define a pre-event window (e.g., 7–14 days before the event).
+   - Define a post-event window (e.g., 7–14 days after the event, avoiding immediate days with possible cloud/response artifacts).
+
+3. **Data Acquisition**
+   - Download daily NPP-VIIRS VNP46A2 imagery for the selected provinces for both periods (using GEE, limited to province scale).
+
+4. **Compositing**
+   - For each province and period, composite daily images using the median (to reduce outlier effects).
+
+5. **Change Analysis**
+   - Calculate per-province mean brightness for pre- and post-event composites.
+   - Compute absolute and percentage change in brightness.
+
+6. **Summary Outputs**
+   - Export a CSV summarizing province, pre/post mean brightness, absolute and percentage change.
+   - Generate plots (bar charts, maps) visualizing brightness change for damage assessment.
+
+**Next Step:**  
+I will now assign Data_Searcher to retrieve authoritative event details and the list of most severely affected provinces from official sources.

@@ -1,0 +1,10 @@
+user: Analyze the impact of the 2025 Myanmar earthquake using daily NTL imagery and multi-source news content. Retrieve authoritative event details and identify the most affected regions and quantify changes in nighttime brightness before and after the event to infer damage levels.
+assistant: The geospatial code for extracting and comparing nighttime light (NTL) before and after the earthquake passed validation except it failed to run due to a missing affected region polygon file: 'C:/NTL_Agent/Boundaries/Mandalay_and_surrounding.geojson'.
+
+To proceed, please provide the affected region polygon file covering Mandalay and surrounding provinces impacted by the earthquake. Alternatively, I can help you retrieve or generate this polygon from administrative boundary datasets.
+
+Would you like me to:
+1. Retrieve official administrative boundaries for Mandalay and neighboring provinces to create the affected region polygon?
+2. Or do you have a polygon file ready to upload?
+
+Please advise how to proceed.

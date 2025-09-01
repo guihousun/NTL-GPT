@@ -1,0 +1,20 @@
+user: Please measure the population with access to electricity in Shanghai, in accordance with the methodology for SDG Indicator 7.1.1 (Proportion of population with access to electricity), using the 2020 NPP-VIIRS NTL imagery and LandScan population data.
+assistant: - LandScan 2020 population raster for Shanghai (C:/NTL_Agent/LandScan_data/Shanghai/LandScan_上海市_2020.tif) and Shanghai administrative boundaries (C:/NTL_Agent/report/shp/shape_files/上海市.shp) are ready.
+- However, the NPP-VIIRS 2020 annual NTL imagery could not be directly retrieved for Shanghai due to tool limitations (only country/province-level supported, and "上海"/"中国" not recognized by the tool).
+- Recommended best practice: Extract the Shanghai region from a national/provincial NPP-VIIRS 2020 raster if available, or use a custom GEE script for subnational NTL export.
+
+**Next Step:**  
+I will generate Python code to:
+1. Check for the presence of a national/provincial NPP-VIIRS 2020 raster in C:/NTL_Agent/Night_data/ (or subfolders).
+2. If found, clip it to the Shanghai boundary to produce a city-level NTL raster for further analysis.
+
+I will now prepare the code for Code_Assistant to validate.
+I will generate a modular Python code block to:
+- Search for a 2020 NPP-VIIRS raster in C:/NTL_Agent/Night_data/ (and subfolders).
+- If found, clip it to the Shanghai boundary (C:/NTL_Agent/report/shp/shape_files/上海市.shp) and save as C:/NTL_Agent/Night_data/Shanghai/NTL_上海市_NPP-VIIRS_2020.tif.
+
+**Code Block:**
+- Search for a file matching "*2020*.tif" and "NPP" or "VIIRS" in the filename.
+- Clip the raster to the Shanghai shapefile.
+
+I will now submit this code and file paths to Code_Assistant for validation.

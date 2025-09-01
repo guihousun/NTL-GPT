@@ -1,0 +1,8 @@
+user: Please measure the population with access to electricity in Shanghai, in accordance with the methodology for SDG Indicator 7.1.1 (Proportion of population with access to electricity), using the 2020 NPP-VIIRS NTL imagery and LandScan population data.
+assistant: Shanghai is a municipality and may not be listed under the "province" scale level in the dataset. For annual NPP-VIIRS-Like data, only "country" and "province" scales are supported, and Shanghai might be considered a "city" scale which is not supported for annual data.
+
+To proceed, I suggest two options:
+1. Download the annual NPP-VIIRS-Like data for the whole country (China) and then clip to Shanghai using administrative boundaries.
+2. Download monthly or daily NTL data for Shanghai at the city scale and aggregate to annual.
+
+Please confirm which approach you prefer or if you want me to try another dataset or scale.

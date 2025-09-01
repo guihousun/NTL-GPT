@@ -1,0 +1,8 @@
+user: Analyze the impact of the 2025 Myanmar earthquake using daily NTL imagery and multi-source news content. Retrieve authoritative event details and identify the most affected regions and quantify changes in nighttime brightness before and after the event to infer damage levels.
+assistant: I searched for authoritative details on the 2025 Myanmar earthquake but did not find direct relevant information about the event's date, time, magnitude, epicenter coordinates, or affected regions in the recent news or authoritative sources.
+
+To proceed accurately, I suggest:
+- Confirming the exact date and details of the 2025 Myanmar earthquake from a trusted seismic event database or official geological agency.
+- Alternatively, if you have the event date or approximate time, I can proceed to download daily NTL imagery for Myanmar around that period and analyze brightness changes.
+
+Please provide the exact or approximate date of the earthquake or confirm if I should proceed with a default assumption (e.g., August 14, 2025) for the analysis.

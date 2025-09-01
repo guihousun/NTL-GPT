@@ -1,0 +1,4 @@
+user: Please use the 2020 NPP-VIIRS nighttime light imagery and LandScan population data to measure the population with access to electricity in Shanghai, in accordance with the methodology for SDG Indicator 7.1.1 (Proportion of population with access to electricity).
+assistant: The current Shanghai boundary shapefile contains only a point geometry (centroid) rather than a polygon boundary, which is insufficient for clipping the rasters spatially. To proceed accurately, we need a polygon boundary for Shanghai.
+
+Would you like me to obtain a polygon boundary for Shanghai from OpenStreetMap or another authoritative source? This will enable proper spatial clipping and analysis.

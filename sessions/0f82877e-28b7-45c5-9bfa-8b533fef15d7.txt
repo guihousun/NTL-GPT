@@ -1,0 +1,12 @@
+user: Q18: Assess the impact of the 2025 Myanmar earthquake using daily NPP-VIIRS VNP46A2 imagery. Retrieve authoritative event details from official sources (USGS, ReliefWeb, OCHA, WHO, GDACS) to identify the epicenter and the most severely affected province. 
+assistant: I have obtained the key event details for the 2025 Myanmar earthquake:
+- Date: March 28, 2025
+- Magnitude: 7.7
+- Epicenter: Near Sagaing Fault, approx. 21.87°N, 95.98°E
+- Most affected province: Sagaing Region
+
+Due to data retrieval issues, administrative boundaries for Sagaing Region could not be fetched. I recommend defining a spatial bounding box around the epicenter to approximate the affected area.
+
+Next, I suggest acquiring daily NPP-VIIRS VNP46A2 nighttime light imagery for Myanmar for the period March 1 to April 30, 2025, to analyze pre- and post-earthquake NTL changes.
+
+Please confirm if I should proceed with downloading the daily NPP-VIIRS VNP46A2 imagery for Myanmar for this time range at the country scale or with a custom bounding box around the epicenter.
